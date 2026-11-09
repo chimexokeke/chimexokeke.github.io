@@ -165,7 +165,10 @@
     <div class="eyebrow">Technical art</div>
     <h2>Soft fur and a tail of fire, in a browser</h2>
     <div class="grid g2">
-      <figure><img class="shot" loading="lazy" src="../img/bestill/fur_close.webp" alt="Close-up of the fox's head with shell-rendered fur and gold eyes" width="1180" height="900"><figcaption>Shell fur close-up in Unity, 32 layers.</figcaption></figure>
+      <div>
+        <figure><video class="shot" src="../img/bestill/ingame_trot.mp4" poster="../img/bestill/ingame_trot_poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="In game: the fox trots along the torch-lit forest path, its shell fur and flame tail moving"></video><figcaption>In game: the fox trots through the torchlight with shell fur (32 layers) and its flame tail.</figcaption></figure>
+        <figure style="margin-top:16px"><img class="shot" loading="lazy" src="../img/bestill/fur_close.webp" alt="Close-up of the fox's head with shell-rendered fur and gold eyes" width="1180" height="900"><figcaption>Shell fur close-up in Unity, 32 layers.</figcaption></figure>
+      </div>
       <div>
         <ul class="ticks">
           <li><b>Shell fur:</b> a custom URP shader draws the fur as stacked shells, with strand locks and coat lag driven by the body's motion. Colour and fur direction come from maps baked per pixel from the mesh and bone masks, so the markings don't show the low-poly surface.</li>
