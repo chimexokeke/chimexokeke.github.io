@@ -11,10 +11,8 @@
 <link rel="stylesheet" href="style.css">
 <style>
   .hero { padding: 80px 0 64px; background: radial-gradient(1000px 500px at 80% -20%, rgba(242,184,75,.16), transparent 60%); }
-  .feature { display: grid; grid-template-columns: 300px 1fr; gap: 28px; align-items: center; text-decoration: none; color: inherit; }
-  .feature:hover h3 { color: var(--gold); }
-  .feature img { border-radius: 14px; border: 1px solid var(--line); aspect-ratio: 3/4; object-fit: cover; object-position: center 30%; }
-  @media (max-width: 720px) { .feature { grid-template-columns: 1fr; } .feature img { aspect-ratio: 16/10; } }
+  .reels { display: grid; gap: 28px; margin-top: 40px; }
+  .reels figcaption { font-size: 16px; font-weight: 800; color: var(--text); margin-top: 10px; }
   .proj { display: block; text-decoration: none; color: inherit; transition: border-color .15s; }
   .proj:hover { border-color: var(--gold); }
   .proj .tile { aspect-ratio: 16/9; border-radius: 10px; margin-bottom: 14px; display: grid; place-items: center; font-weight: 900; font-size: 28px; color: rgba(255,255,255,.85); background-size: cover; background-position: center; }
@@ -40,10 +38,12 @@
   <div class="wrap">
     <div class="eyebrow">Technical Artist · Gameplay Animator · 3D Artist</div>
     <h1>I make real-time characters and worlds that look good and feel good to play.</h1>
-    <p class="lead">7+ years across games, commercials and real-time 3D. I take assets from modelling, rigging and texturing in Blender and Maya, through optimisation and engine integration in Unity, Unreal and the web, then tune timing and feedback until the interaction feels right. M.Sc. Game Design, Aalto University. Based in Helsinki, working remotely.</p>
     <div class="row" style="margin-top:22px">
-      <a class="btn solid" href="chi-before-dawn/">See the CHI playable ad</a>
       <a class="btn" href="#contact">Get in touch</a>
+    </div>
+    <div class="reels" id="reels">
+      <figure><div class="video"><iframe src="https://player.vimeo.com/video/1162666264" title="Animation demo reel" loading="lazy" allow="fullscreen; picture-in-picture"></iframe></div><figcaption>Animation demo reel</figcaption></figure>
+      <figure><div class="video"><iframe src="https://player.vimeo.com/video/1162672697" title="3D game art reel" loading="lazy" allow="fullscreen; picture-in-picture"></iframe></div><figcaption>3D game art reel</figcaption></figure>
     </div>
   </div>
 </header>
@@ -52,18 +52,14 @@
 <section id="work">
   <div class="wrap">
     <div class="eyebrow">Featured</div>
-    <a class="feature card" href="chi-before-dawn/">
-      <img src="img/chi/08_dawn.webp" alt="CHI: Before Dawn playable ad at sunrise" width="540" height="1169">
-      <div>
-        <h2 style="margin-bottom:.3em">CHI: Before Dawn · HTML5 playable ad</h2>
-        <p class="muted">Solo · Blender, Three.js, TypeScript · 2026</p>
-        <p>A one-file playable ad for my own game: guardian angel Chi carries a mother's prayer to the gods before dawn while crows attack the calabash that holds her son's life. Assets from Blender to GLB, gameplay and game feel in TypeScript, 1.75 MB with no network requests.</p>
-        <ul class="chips"><li>Blender → GLB</li><li>Three.js</li><li>TypeScript</li><li>Game feel</li><li>Mobile performance</li><li>AI-assisted coding</li></ul>
-        <span class="btn">Play it and read the case study →</span>
-      </div>
-    </a>
-
-    <div class="grid g2" style="margin-top:20px">
+    <div class="grid g2">
+      <a class="card proj" href="chi-before-dawn/">
+        <div class="tile" role="img" aria-label="CHI: Before Dawn playable ad at sunrise" style="background:#e9d2b0 url(img/chi/08_dawn.webp) center 62% / cover"></div>
+        <h3>CHI: Before Dawn · HTML5 playable ad</h3>
+        <p class="muted" style="margin:0 0 .6em">Blender, Three.js, TypeScript · solo, 2026</p>
+        <p>A one-file playable ad for my own game: guardian angel Chi carries a mother's prayer to the gods before dawn while crows attack the calabash that holds her son's life. 1.75 MB with no network requests.</p>
+        <span class="btn" style="margin-top:6px">Play it and read the case study →</span>
+      </a>
       <div class="card">
         <h3>CHI: Before Dawn (game)</h3>
         <p class="muted" style="margin:0 0 .6em">Unity 6 WebGL rail shooter · solo, in development</p>
@@ -103,16 +99,6 @@
       <a class="proj card" href="https://nuclearcactus.itch.io/around-the-world"><div class="tile cover" role="img" aria-label="Around the World cover" style="background:url(img/projects/around-the-world.webp) center / cover, linear-gradient(135deg,#2f8a7e,#123a35)"></div><h3>Around The World (2024)</h3><p class="role">Game Designer / Animator</p></a>
       <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/short-films-and-commercials"><div class="tile cover" role="img" aria-label="Films cover" style="background:url(img/projects/films.webp) center / cover, linear-gradient(135deg,#a5763a,#3e2a14)"></div><h3>Short films &amp; commercials</h3><p class="role">Animation supervisor and animator</p></a>
       <a class="proj card" href="https://chimex.itch.io"><div class="tile cover" style="background:linear-gradient(135deg,#d9604a,#5a1f16)">itch.io</div><h3>My games</h3><p class="role">Play on itch.io</p></a>
-    </div>
-  </div>
-</section>
-
-<section id="reels">
-  <div class="wrap">
-    <div class="eyebrow">Reels</div>
-    <div class="grid g2">
-      <figure><div class="video"><iframe src="https://player.vimeo.com/video/1162666264" title="Animation demo reel" loading="lazy" allow="fullscreen; picture-in-picture"></iframe></div><figcaption>Animation demo reel</figcaption></figure>
-      <figure><div class="video"><iframe src="https://player.vimeo.com/video/1162672697" title="3D game art reel" loading="lazy" allow="fullscreen; picture-in-picture"></iframe></div><figcaption>3D game art reel</figcaption></figure>
     </div>
   </div>
 </section>
