@@ -25,8 +25,6 @@
   .gallery.animals img { background: #5f5f63; }
   .quote { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; color: var(--teal); margin: 0 0 14px; }
   .strip { grid-auto-columns: minmax(280px, 1fr); }
-  .wip { border-left: 3px solid var(--teal); }
-  .wip h3 { color: #9fe3dc; }
 </style>
 </head>
 <body>
@@ -108,7 +106,7 @@
       <figure><img class="shot" loading="lazy" src="../img/bestill/rig_face.webp" alt="Grid of fox face poses: blinks, jaw open, tongue out, snarl" width="1200" height="1200"><figcaption>The face rig: jaw, three-bone tongue, lids, nose, eyes and fleshy socket controls for blinks.</figcaption></figure>
     </div>
     <h3 style="margin-top:36px">Animation clips</h3>
-    <p>Two of my hand-animated clips, played straight from Blender on the game mesh.</p>
+    <p>Two of my hand-keyed clips, played straight from Blender on the game mesh.</p>
     <div class="grid g2" style="margin-top:12px">
       <figure><video class="shot" src="../img/bestill/anim_curious.mp4" poster="../img/bestill/anim_curious_poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Fox_Curious animation: the fox watches the visitor, tilting its head"></video><figcaption><b>Curious</b>: 140-frame loop, 30 fps. The fox stops on the path and studies the visitor before it dares come closer.</figcaption></figure>
       <figure><video class="shot" src="../img/bestill/anim_settle.mp4" poster="../img/bestill/anim_settle_poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Fox_Settle animation: the fox sits down and wraps its tail around itself"></video><figcaption><b>Settle</b>: 75 frames, 30 fps. After the rub, the fox sits beside the visitor and curls its tail around itself.</figcaption></figure>
@@ -127,7 +125,7 @@
         <h3>Animation</h3>
         <ul class="ticks">
           <li>15 clips, including idle, walk, trot, freeze and hold, curious, sniff, tail wag, leg brush, settle and sitting idle, bolt, gallop, play and pounce.</li>
-          <li>I'm re-animating each clip by hand for the final version. The idle, walk, trot, curious, sniff, freeze, gallop and settle clips are done; play, leg brush, pounce and bolt are next.</li>
+          <li>I'm animating each clip as hand-keyed, keyframed animation in Blender. The idle, walk, trot, curious, sniff, freeze, gallop and settle clips are done; play, leg brush, pounce and bolt are next.</li>
           <li>Locomotion is in place. The game moves the fox at each clip's measured stride speed, so the paws stay planted. I checked this with an in-engine probe that reports paw slide for each state.</li>
           <li>Every clip keys the full control set, so no pose leaks from one clip into the next during export.</li>
         </ul>
@@ -178,10 +176,6 @@
           <li><b>Night forest:</b> an endless path streamed in 16 m chunks, snow and pine-needle shaders, fog that closes in when the torch dies, and 20 pairs of eyes that open when you stop.</li>
         </ul>
       </div>
-    </div>
-    <div class="card wip" style="margin-top:28px">
-      <h3>Still in progress</h3>
-      <p>The last four clips are being re-animated by hand, and the trust moment still needs its sound and halo. The browser build of the full game is being tested on integrated graphics. A playable build will go on <a href="https://chimex.itch.io">itch.io</a>.</p>
     </div>
   </div>
 </section>
