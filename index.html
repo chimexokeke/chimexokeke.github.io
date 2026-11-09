@@ -18,6 +18,7 @@
   .proj { display: block; text-decoration: none; color: inherit; transition: border-color .15s; }
   .proj:hover { border-color: var(--gold); }
   .proj .tile { aspect-ratio: 16/9; border-radius: 10px; margin-bottom: 14px; display: grid; place-items: center; font-weight: 900; font-size: 28px; color: rgba(255,255,255,.85); background-size: cover; background-position: center; }
+  .proj .tile.cover { aspect-ratio: 1; }
   .proj .role { color: var(--muted); font-size: 15px; margin: 0; }
   .video { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #000; }
   .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -93,15 +94,15 @@
 
     <div class="eyebrow" style="margin-top:56px">Game projects</div>
     <div class="grid g3">
-      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/lumios"><div class="tile" style="background:linear-gradient(135deg,#3b6c8f,#1e2f4a)">Lumios</div><h3>Lumios (2026)</h3><p class="role">Gameplay Animator / Rigger</p></a>
-      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/jos"><div class="tile" style="background:linear-gradient(135deg,#8f5a3b,#4a2a1e)">JOS</div><h3>JOS (2026)</h3><p class="role">Animator / 3D Artist / Game Designer</p></a>
-      <a class="proj card" href="https://joajii.itch.io/our-hallowed-dark"><div class="tile" style="background:linear-gradient(135deg,#3d2f55,#16121f)">Hallowed Dark</div><h3>Hallowed Dark (2026)</h3><p class="role">Gameplay Animator / Rigger</p></a>
-      <a class="proj card" href="https://michlau.itch.io/thaumatrope"><div class="tile" style="background:linear-gradient(135deg,#6a7d3f,#2f3a1c)">Thaumatrope</div><h3>Thaumatrope (2026)</h3><p class="role">Props &amp; environment artist / level designer</p></a>
-      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/tactical-evacuation-zone"><div class="tile" style="background:linear-gradient(135deg,#55606b,#22282e)">Tactical Evac</div><h3>Tactical Evacuation (2026)</h3><p class="role">UI Designer</p></a>
-      <a class="proj card" href="https://tkamruzzaman.itch.io/the-campaign-trail"><div class="tile" style="background:linear-gradient(135deg,#9a4141,#3d1a1a)">Campaign Trail</div><h3>Campaign Trail (2025)</h3><p class="role">Game Designer</p></a>
-      <a class="proj card" href="https://nuclearcactus.itch.io/around-the-world"><div class="tile" style="background:linear-gradient(135deg,#2f8a7e,#123a35)">Around the World</div><h3>Around The World (2024)</h3><p class="role">Game Designer / Animator</p></a>
-      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/short-films-and-commercials"><div class="tile" style="background:linear-gradient(135deg,#a5763a,#3e2a14)">Films</div><h3>Short films &amp; commercials</h3><p class="role">Animation supervisor and animator</p></a>
-      <a class="proj card" href="https://chimex.itch.io"><div class="tile" style="background:linear-gradient(135deg,#d9604a,#5a1f16)">itch.io</div><h3>My games</h3><p class="role">Play on itch.io</p></a>
+      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/lumios"><div class="tile cover" role="img" aria-label="Lumios cover" style="background:url(img/projects/lumios.webp) center / cover, linear-gradient(135deg,#3b6c8f,#1e2f4a)"></div><h3>Lumios (2026)</h3><p class="role">Gameplay Animator / Rigger</p></a>
+      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/jos"><div class="tile cover" role="img" aria-label="JOS cover" style="background:url(img/projects/jos.webp) center / cover, linear-gradient(135deg,#8f5a3b,#4a2a1e)"></div><h3>JOS (2026)</h3><p class="role">Animator / 3D Artist / Game Designer</p></a>
+      <a class="proj card" href="https://joajii.itch.io/our-hallowed-dark"><div class="tile cover" role="img" aria-label="Hallowed Dark cover" style="background:url(img/projects/hallowed-dark.webp) center / cover, linear-gradient(135deg,#3d2f55,#16121f)"></div><h3>Hallowed Dark (2026)</h3><p class="role">Gameplay Animator / Rigger</p></a>
+      <a class="proj card" href="https://michlau.itch.io/thaumatrope"><div class="tile cover" role="img" aria-label="Thaumatrope cover" style="background:url(img/projects/thaumatrope.webp) center / cover, linear-gradient(135deg,#6a7d3f,#2f3a1c)"></div><h3>Thaumatrope (2026)</h3><p class="role">Props &amp; environment artist / level designer</p></a>
+      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/tactical-evacuation-zone"><div class="tile cover" role="img" aria-label="Tactical Evac cover" style="background:url(img/projects/tactical-evac.webp) center / cover, linear-gradient(135deg,#55606b,#22282e)"></div><h3>Tactical Evacuation (2026)</h3><p class="role">UI Designer</p></a>
+      <a class="proj card" href="https://tkamruzzaman.itch.io/the-campaign-trail"><div class="tile cover" role="img" aria-label="Campaign Trail cover" style="background:url(img/projects/campaign-trail.webp) center / cover, linear-gradient(135deg,#9a4141,#3d1a1a)"></div><h3>Campaign Trail (2025)</h3><p class="role">Game Designer</p></a>
+      <a class="proj card" href="https://nuclearcactus.itch.io/around-the-world"><div class="tile cover" role="img" aria-label="Around the World cover" style="background:url(img/projects/around-the-world.webp) center / cover, linear-gradient(135deg,#2f8a7e,#123a35)"></div><h3>Around The World (2024)</h3><p class="role">Game Designer / Animator</p></a>
+      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/short-films-and-commercials"><div class="tile cover" role="img" aria-label="Films cover" style="background:url(img/projects/films.webp) center / cover, linear-gradient(135deg,#a5763a,#3e2a14)"></div><h3>Short films &amp; commercials</h3><p class="role">Animation supervisor and animator</p></a>
+      <a class="proj card" href="https://chimex.itch.io"><div class="tile cover" style="background:linear-gradient(135deg,#d9604a,#5a1f16)">itch.io</div><h3>My games</h3><p class="role">Play on itch.io</p></a>
     </div>
   </div>
 </section>
