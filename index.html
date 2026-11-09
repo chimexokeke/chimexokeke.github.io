@@ -3,23 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Samuel Chimezie Okeke · Technical Artist</title>
-<meta name="description" content="Technical artist, gameplay animator and 3D artist. Real-time 3D, game feel and HTML5 playables.">
+<title>Samuel Chimezie Okeke · Technical Artist &amp; Gameplay Animator</title>
+<meta name="description" content="Technical artist, gameplay animator and 3D artist. I build experiences that look great and are fun to play.">
+<meta property="og:title" content="Samuel Chimezie Okeke · Technical Artist &amp; Gameplay Animator">
+<meta property="og:description" content="I build experiences that look great and are fun to play.">
+<meta property="og:image" content="img/bestill/04_trust.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .hero { padding: 80px 0 64px; background: radial-gradient(1000px 500px at 80% -20%, rgba(242,184,75,.16), transparent 60%); }
-  .reels { display: grid; gap: 28px; margin-top: 40px; }
-  .reels figcaption { font-size: 16px; font-weight: 800; color: var(--text); margin-top: 10px; }
-  .proj { display: block; text-decoration: none; color: inherit; transition: border-color .15s; }
-  .proj:hover { border-color: var(--gold); }
-  .proj .tile { aspect-ratio: 16/9; border-radius: 10px; margin-bottom: 14px; display: grid; place-items: center; font-weight: 900; font-size: 28px; color: rgba(255,255,255,.85); background-size: cover; background-position: center; }
-  .proj .tile.cover { aspect-ratio: 1; }
-  .proj .role { color: var(--muted); font-size: 15px; margin: 0; }
-  .video { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #000; }
+  section { padding: 88px 0; }
+  .hero { padding: 88px 0 72px; border-bottom: 1px solid var(--line); background: radial-gradient(1100px 520px at 85% -15%, rgba(242,184,75,.14), transparent 60%), radial-gradient(700px 400px at -10% 10%, rgba(239,122,90,.08), transparent 60%); }
+  .hero h1 { max-width: 15em; margin-bottom: .4em; }
+  .roles { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-weight: 500; margin: 0 0 28px; }
+  .roles span::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin: 0 8px 2px 0; }
+  .reels { display: grid; gap: 36px; margin-top: 56px; }
+  .reel figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; margin-top: 12px; font-size: 15px; }
+  .reel figcaption b { font-family: "Space Grotesk", sans-serif; font-size: 19px; font-weight: 600; color: var(--text); }
+  .video { position: relative; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #000; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
   .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+  .head h2 { margin: 0; }
+  .head p { margin: 0; color: var(--muted); max-width: 32em; }
+
+  .work { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); }
+  .wcard { display: block; text-decoration: none; color: inherit; }
+  .thumb { position: relative; aspect-ratio: 16/10; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--card) center / cover no-repeat; transition: border-color .2s, transform .25s; }
+  .thumb video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .25s; }
+  .wcard:hover .thumb, .wcard:focus-visible .thumb { border-color: var(--gold); transform: translateY(-3px); }
+  .wcard.playing .thumb video { opacity: 1; }
+  .badge { position: absolute; left: 14px; top: 14px; background: rgba(20,14,13,.78); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.12); color: var(--text); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; }
+  .wcard h3 { font-size: 23px; margin: 18px 0 6px; transition: color .2s; }
+  .wcard:hover h3 { color: var(--gold); }
+  .meta { color: var(--gold); font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 8px; }
+  .wcard p.desc { color: var(--muted); margin: 0 0 10px; }
+  .more { font-weight: 600; color: var(--text); font-size: 15px; }
+  .more::after { content: " →"; color: var(--gold); transition: margin .2s; }
+  .wcard:hover .more::after { margin-left: 4px; }
+
+  .projects { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .pcard { display: block; text-decoration: none; color: inherit; }
+  .pcard .cover { aspect-ratio: 1; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+  .pcard .cover div { width: 100%; height: 100%; background: center / cover no-repeat; transition: transform .35s; }
+  .pcard:hover .cover { border-color: var(--gold); }
+  .pcard:hover .cover div { transform: scale(1.05); }
+  .pcard h3 { font-size: 17px; margin: 12px 0 2px; }
+  .pcard p { margin: 0; color: var(--muted); font-size: 14px; }
+  .itch { margin-top: 28px; }
+
+  .about { display: grid; gap: 48px; grid-template-columns: 1.1fr 1fr; align-items: start; }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+  .years { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .years div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .years b { display: block; font-family: "Space Grotesk", sans-serif; font-size: 34px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+  .years span { color: var(--muted); font-size: 15px; }
+  .skills h3 { font-size: 15px; color: var(--muted); font-family: "Inter", sans-serif; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 8px; }
+  .skills .chips { margin: 0 0 22px; }
+
+  .contact { text-align: center; }
+  .contact h2 { font-size: clamp(30px, 5vw, 52px); max-width: 14em; margin: 0 auto .4em; }
+  .contact .mail { font-family: "Space Grotesk", sans-serif; font-size: clamp(20px, 3vw, 28px); font-weight: 600; color: var(--gold); text-decoration: none; border-bottom: 2px solid rgba(242,184,75,.35); }
+  .contact .mail:hover { border-color: var(--gold); }
+  .contact .row { justify-content: center; margin-top: 30px; }
+  .contact .phone { color: var(--muted); margin-top: 18px; font-size: 15px; }
+  .nav .cv { border: 1px solid var(--gold); color: var(--gold); padding: 5px 14px; border-radius: 999px; }
+  .nav .cv:hover { background: var(--gold); color: #2a1a10; }
 </style>
 </head>
 <body>
@@ -28,114 +78,142 @@
   <a class="brand" href="./">Samuel Chimezie Okeke</a>
   <ul>
     <li><a href="#work">Work</a></li>
-    <li class="hide-sm"><a href="#reels">Reels</a></li>
+    <li class="hide-sm"><a href="#projects">Projects</a></li>
     <li class="hide-sm"><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li class="hide-sm"><a href="#contact">Contact</a></li>
+    <li><a class="cv" href="https://drive.google.com/file/d/1tAq3x4Yciy3QJZXcCHO-OlThAqRpUGyt/view?usp=sharing">CV</a></li>
   </ul>
 </div></nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Technical Artist · Gameplay Animator · 3D Artist</div>
-    <h1>I make real-time characters and worlds that look good and feel good to play.</h1>
-    <div class="row" style="margin-top:22px">
-      <a class="btn" href="#contact">Get in touch</a>
-    </div>
+    <div class="eyebrow">Helsinki · M.Sc. Game Design, Aalto University</div>
+    <h1>I build experiences that look great and are fun to play.</h1>
+    <div class="roles"><span>Technical Artist</span><span>Gameplay Animator</span><span>3D Artist</span></div>
+    <a class="btn solid" href="#contact">Get in touch</a>
     <div class="reels" id="reels">
-      <figure><div class="video"><iframe src="https://player.vimeo.com/video/1162666264" title="Animation demo reel" loading="lazy" allow="fullscreen; picture-in-picture"></iframe></div><figcaption>Animation demo reel</figcaption></figure>
-      <figure><div class="video"><iframe src="https://player.vimeo.com/video/1162672697" title="3D game art reel" loading="lazy" allow="fullscreen; picture-in-picture"></iframe></div><figcaption>3D game art reel</figcaption></figure>
+      <figure class="reel"><div class="video"><iframe src="https://player.vimeo.com/video/1162666264" title="Animation demo reel" loading="lazy" allow="fullscreen; picture-in-picture"></iframe></div><figcaption><b>Animation demo reel</b><span class="muted">Gameplay and character animation</span></figcaption></figure>
+      <figure class="reel"><div class="video"><iframe src="https://player.vimeo.com/video/1162672697" title="3D game art reel" loading="lazy" allow="fullscreen; picture-in-picture"></iframe></div><figcaption><b>3D game art reel</b><span class="muted">Modelling, texturing and real-time assets</span></figcaption></figure>
     </div>
   </div>
 </header>
 
 <main>
-<section id="work">
+<section id="work" style="border-top:0">
   <div class="wrap">
-    <div class="eyebrow">Featured</div>
-    <div class="grid g2">
-      <a class="card proj" href="chi-before-dawn/">
-        <div class="tile" role="img" aria-label="CHI: Before Dawn playable ad at sunrise" style="background:#e9d2b0 url(img/chi/08_dawn.webp) center 62% / cover"></div>
-        <h3>CHI: Before Dawn · HTML5 playable ad</h3>
-        <p class="muted" style="margin:0 0 .6em">Blender, Three.js, TypeScript · solo, 2026</p>
-        <p>A one-file playable ad for my own game: guardian angel Chi carries a mother's prayer to the gods before dawn while crows attack the calabash that holds her son's life. 1.75 MB with no network requests.</p>
-        <span class="btn" style="margin-top:6px">Play it and read the case study →</span>
+    <div class="head">
+      <div><div class="eyebrow">Selected work</div><h2>Case studies</h2></div>
+      <p>Personal projects, with breakdowns of how each one was made.</p>
+    </div>
+    <div class="work">
+      <a class="wcard" href="chi-before-dawn/" data-video="img/chi/anim/chi_swim.mp4">
+        <div class="thumb" style="background-image:url(img/chi/08_dawn.webp); background-position:center 62%; background-color:#e9d2b0"><span class="badge">Playable ad</span></div>
+        <h3>CHI: Before Dawn</h3>
+        <p class="meta">Blender · Three.js · TypeScript · 2026</p>
+        <p class="desc">A 1.75 MB HTML5 playable ad for my Unity rail shooter: a guardian angel carries a mother's prayer to the gods before dawn.</p>
+        <span class="more">Play it and read the case study</span>
       </a>
-      <div class="card">
-        <h3>CHI: Before Dawn (game)</h3>
-        <p class="muted" style="margin:0 0 .6em">Unity 6 WebGL rail shooter · solo, in development</p>
-        <p>A stylized rail shooter inspired by Igbo cosmology. The calabash is the only health bar and lives in the world, not on a HUD. 3D art, animation, gameplay and code, built with AI-assisted coding.</p>
-      </div>
-      <a class="card proj" href="be-still/">
-        <div class="tile" style="background-image:url(img/bestill/04_trust.webp)"></div>
-        <h3>Be Still</h3>
-        <p class="muted" style="margin:0 0 .6em">Unity 6 URP · PC and WebGL · solo, in development</p>
-        <p>A one-control encounter in a winter forest at night: a fire fox comes close only if you stay still. Custom fox rig and animation, behaviour as a state machine, and shaders for shell fur, flames and aurora.</p>
-        <span class="btn" style="margin-top:6px">Read the case study →</span>
-      </a>
-      <a class="card proj" href="gravedancer/">
-        <div class="tile" style="background:#2b2b2f url(img/gravedancer/idle.webp) center 46% / cover"></div>
-        <h3>Gravedancer</h3>
-        <p class="muted" style="margin:0 0 .6em">Roblox R15 · Blender, Luau · solo, in development</p>
-        <p>A dual-sword fighter on Roblox's 15-part body: a full control rig that bakes down to R15, hand-keyed animation, a Blender-to-Studio bridge, and a Luau animation system with masks, markers and IK.</p>
-        <span class="btn" style="margin-top:6px">Read the case study →</span>
-      </a>
-      <a class="card proj" href="nkiruka/">
-        <div class="tile" style="background:#5a5a5a url(img/nkiruka/reel.webp) center / cover"></div>
+      <a class="wcard" href="nkiruka/" data-video="img/nkiruka/combo1.mp4">
+        <div class="thumb" style="background-image:url(img/nkiruka/thumb.webp); background-position:left center; background-color:#5a5a5a"><span class="badge">Gameplay animation</span></div>
         <h3>Nkiruka "Stillwing"</h3>
-        <p class="muted" style="margin:0 0 .6em">Maya, Unreal Engine 5, Blueprints · gameplay animation</p>
-        <p>How does a fighter who depends on a cane still fight? A moveset keyframed from my own reference footage, keeping weight off her injured left knee, then set up in Unreal.</p>
-        <span class="btn" style="margin-top:6px">Read the case study →</span>
+        <p class="meta">Maya · Unreal Engine 5 · Blueprints</p>
+        <p class="desc">A fighter who depends on a cane: a moveset keyframed from my own reference, keeping weight off her injured knee.</p>
+        <span class="more">Read the case study</span>
+      </a>
+      <a class="wcard" href="be-still/" data-video="img/bestill/anim_curious.mp4">
+        <div class="thumb" style="background-image:url(img/bestill/04_trust.webp)"><span class="badge">Tech art · rigging</span></div>
+        <h3>Be Still</h3>
+        <p class="meta">Unity 6 URP · PC &amp; WebGL · in development</p>
+        <p class="desc">A fire fox that only comes close if you stay still. Custom rig and animation, a behaviour state machine, and shaders for fur, flames and aurora.</p>
+        <span class="more">Read the case study</span>
+      </a>
+      <a class="wcard" href="gravedancer/" data-video="img/gravedancer/idle.mp4">
+        <div class="thumb" style="background-image:url(img/gravedancer/idle.webp); background-position:center 46%; background-color:#2b2b2f"><span class="badge">Rigging · tools</span></div>
+        <h3>Gravedancer</h3>
+        <p class="meta">Roblox R15 · Blender · Luau · in development</p>
+        <p class="desc">A dual-sword fighter: a control rig that bakes to R15, a Blender-to-Studio bridge and a Luau animation system with masks and IK.</p>
+        <span class="more">Read the case study</span>
       </a>
     </div>
+  </div>
+</section>
 
-    <div class="eyebrow" style="margin-top:56px">Game projects</div>
-    <div class="grid g3">
-      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/lumios"><div class="tile cover" role="img" aria-label="Lumios cover" style="background:url(img/projects/lumios.webp) center / cover, linear-gradient(135deg,#3b6c8f,#1e2f4a)"></div><h3>Lumios (2026)</h3><p class="role">Gameplay Animator / Rigger</p></a>
-      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/jos"><div class="tile cover" role="img" aria-label="JOS cover" style="background:url(img/projects/jos.webp) center / cover, linear-gradient(135deg,#8f5a3b,#4a2a1e)"></div><h3>JOS (2026)</h3><p class="role">Animator / 3D Artist / Game Designer</p></a>
-      <a class="proj card" href="https://joajii.itch.io/our-hallowed-dark"><div class="tile cover" role="img" aria-label="Hallowed Dark cover" style="background:url(img/projects/hallowed-dark.webp) center / cover, linear-gradient(135deg,#3d2f55,#16121f)"></div><h3>Hallowed Dark (2026)</h3><p class="role">Gameplay Animator / Rigger</p></a>
-      <a class="proj card" href="https://michlau.itch.io/thaumatrope"><div class="tile cover" role="img" aria-label="Thaumatrope cover" style="background:url(img/projects/thaumatrope.webp) center / cover, linear-gradient(135deg,#6a7d3f,#2f3a1c)"></div><h3>Thaumatrope (2026)</h3><p class="role">Props &amp; environment artist / level designer</p></a>
-      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/tactical-evacuation-zone"><div class="tile cover" role="img" aria-label="Tactical Evac cover" style="background:url(img/projects/tactical-evac.webp) center / cover, linear-gradient(135deg,#55606b,#22282e)"></div><h3>Tactical Evacuation (2026)</h3><p class="role">UI Designer</p></a>
-      <a class="proj card" href="https://tkamruzzaman.itch.io/the-campaign-trail"><div class="tile cover" role="img" aria-label="Campaign Trail cover" style="background:url(img/projects/campaign-trail.webp) center / cover, linear-gradient(135deg,#9a4141,#3d1a1a)"></div><h3>Campaign Trail (2025)</h3><p class="role">Game Designer</p></a>
-      <a class="proj card" href="https://nuclearcactus.itch.io/around-the-world"><div class="tile cover" role="img" aria-label="Around the World cover" style="background:url(img/projects/around-the-world.webp) center / cover, linear-gradient(135deg,#2f8a7e,#123a35)"></div><h3>Around The World (2024)</h3><p class="role">Game Designer / Animator</p></a>
-      <a class="proj card" href="https://sites.google.com/view/okekechimezie/home/short-films-and-commercials"><div class="tile cover" role="img" aria-label="Films cover" style="background:url(img/projects/films.webp) center / cover, linear-gradient(135deg,#a5763a,#3e2a14)"></div><h3>Short films &amp; commercials</h3><p class="role">Animation supervisor and animator</p></a>
-      <a class="proj card" href="https://chimex.itch.io"><div class="tile cover" style="background:linear-gradient(135deg,#d9604a,#5a1f16)">itch.io</div><h3>My games</h3><p class="role">Play on itch.io</p></a>
+<section id="projects">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">Team projects</div><h2>Games and films</h2></div>
+      <p>Team games and film work, with my role on each.</p>
     </div>
+    <div class="projects">
+      <a class="pcard" href="https://sites.google.com/view/okekechimezie/home/lumios"><div class="cover"><div role="img" aria-label="Lumios cover" style="background-image:url(img/projects/lumios.webp)"></div></div><h3>Lumios</h3><p>Gameplay Animator / Rigger · 2026</p></a>
+      <a class="pcard" href="https://sites.google.com/view/okekechimezie/home/jos"><div class="cover"><div role="img" aria-label="JOS cover" style="background-image:url(img/projects/jos.webp)"></div></div><h3>JOS</h3><p>Animator / 3D Artist / Game Designer · 2026</p></a>
+      <a class="pcard" href="https://joajii.itch.io/our-hallowed-dark"><div class="cover"><div role="img" aria-label="Our Hallowed Dark cover" style="background-image:url(img/projects/hallowed-dark.webp)"></div></div><h3>Hallowed Dark</h3><p>Gameplay Animator / Rigger · 2026</p></a>
+      <a class="pcard" href="https://michlau.itch.io/thaumatrope"><div class="cover"><div role="img" aria-label="Thaumatrope cover" style="background-image:url(img/projects/thaumatrope.webp)"></div></div><h3>Thaumatrope</h3><p>Props &amp; environment artist / level designer · 2026</p></a>
+      <a class="pcard" href="https://sites.google.com/view/okekechimezie/home/tactical-evacuation-zone"><div class="cover"><div role="img" aria-label="Tactical Evacuation screenshot" style="background-image:url(img/projects/tactical-evac.webp)"></div></div><h3>Tactical Evacuation</h3><p>UI Designer · 2026</p></a>
+      <a class="pcard" href="https://tkamruzzaman.itch.io/the-campaign-trail"><div class="cover"><div role="img" aria-label="Campaign Trail cover" style="background-image:url(img/projects/campaign-trail.webp)"></div></div><h3>Campaign Trail</h3><p>Game Designer · 2025</p></a>
+      <a class="pcard" href="https://nuclearcactus.itch.io/around-the-world"><div class="cover"><div role="img" aria-label="Around The World title screen" style="background-image:url(img/projects/around-the-world.webp)"></div></div><h3>Around The World</h3><p>Game Designer / Animator · 2024</p></a>
+      <a class="pcard" href="https://sites.google.com/view/okekechimezie/home/short-films-and-commercials"><div class="cover"><div role="img" aria-label="Still from an animated commercial" style="background-image:url(img/projects/films.webp)"></div></div><h3>Short films &amp; commercials</h3><p>Animation supervisor and animator</p></a>
+    </div>
+    <a class="btn itch" href="https://chimex.itch.io">Play my games on itch.io →</a>
   </div>
 </section>
 
 <section id="about">
-  <div class="wrap grid g2">
+  <div class="wrap about">
     <div>
-      <div class="eyebrow">Experience</div>
-      <table class="tbl">
-        <tr><td>3D Artist</td><td>7+ years</td></tr>
-        <tr><td>3D Animator</td><td>7+ years</td></tr>
-        <tr><td>Technical Artist</td><td>3+ years</td></tr>
-        <tr><td>Game Designer</td><td>3+ years</td></tr>
-      </table>
+      <div class="eyebrow">About</div>
+      <h2>From the model to the moment it feels right</h2>
+      <p class="muted">I model, rig and animate in Blender and Maya, bring it into Unity, Unreal or the web, and tune the timing until it plays well.</p>
+      <div class="years" style="margin-top:24px">
+        <div><b>7+</b><span>years as a 3D artist</span></div>
+        <div><b>7+</b><span>years as a 3D animator</span></div>
+        <div><b>3+</b><span>years in technical art</span></div>
+        <div><b>3+</b><span>years in game design</span></div>
+      </div>
     </div>
-    <div>
-      <div class="eyebrow">Skills</div>
-      <ul class="chips">
-        <li>Animation</li><li>Rigging</li><li>Modelling</li><li>Texturing</li><li>Blender</li><li>Maya</li><li>Unity</li><li>Unreal Engine 5</li><li>Three.js / TypeScript</li><li>HTML5 playables</li><li>Shaders</li><li>Real-time optimisation</li><li>Gameplay implementation</li><li>Game design</li>
-      </ul>
+    <div class="skills">
+      <h3>Art and animation</h3>
+      <ul class="chips"><li>Gameplay animation</li><li>Rigging</li><li>Modelling</li><li>Texturing</li><li>Blender</li><li>Maya</li></ul>
+      <h3>Technical art</h3>
+      <ul class="chips"><li>Shaders</li><li>Real-time optimisation</li><li>Pipeline tools</li><li>Three.js / TypeScript</li><li>HTML5 playables</li></ul>
+      <h3>Engines and design</h3>
+      <ul class="chips"><li>Unity</li><li>Unreal Engine 5</li><li>Blueprints</li><li>Gameplay implementation</li><li>Game design</li></ul>
     </div>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="contact">
   <div class="wrap">
     <div class="eyebrow">Contact</div>
-    <h2>Let's make something that feels good to play.</h2>
-    <div class="grid g3" style="margin-top:20px">
-      <div class="card"><h3>Email</h3><a href="mailto:chimexokeke@yahoo.com">chimexokeke@yahoo.com</a></div>
-      <div class="card"><h3>Phone</h3><a href="tel:+358408148938">+358 40 814 8938</a></div>
-      <div class="card"><h3>Elsewhere</h3><a href="https://www.linkedin.com/in/okeke-chimezie-chimex-548674a7/">LinkedIn</a> · <a href="https://chimex.itch.io">itch.io</a> · <a href="https://drive.google.com/file/d/1tAq3x4Yciy3QJZXcCHO-OlThAqRpUGyt/view?usp=sharing">CV</a></div>
+    <h2>Let's make something fun to play.</h2>
+    <a class="mail" href="mailto:chimexokeke@yahoo.com">chimexokeke@yahoo.com</a>
+    <div class="row">
+      <a class="btn solid" href="mailto:chimexokeke@yahoo.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/okeke-chimezie-chimex-548674a7/">LinkedIn</a>
+      <a class="btn" href="https://drive.google.com/file/d/1tAq3x4Yciy3QJZXcCHO-OlThAqRpUGyt/view?usp=sharing">CV</a>
+      <a class="btn" href="https://chimex.itch.io">itch.io</a>
     </div>
+    <p class="phone">or call <a href="tel:+358408148938">+358 40 814 8938</a></p>
   </div>
 </section>
 </main>
 
-<footer class="footer"><div class="wrap">© 2026 Samuel Chimezie Okeke · Helsinki</div></footer>
+<footer class="footer"><div class="wrap row" style="justify-content:space-between"><span>© 2026 Samuel Chimezie Okeke · Helsinki</span><a href="#">Back to top ↑</a></div></footer>
+<script>
+  // Preview a short clip when hovering a case-study card (desktop only).
+  if (matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".wcard[data-video]").forEach(card => {
+      let v;
+      card.addEventListener("mouseenter", () => {
+        if (!v) {
+          v = Object.assign(document.createElement("video"), { src: card.dataset.video, muted: true, loop: true, playsInline: true, preload: "auto" });
+          card.querySelector(".thumb").prepend(v);
+        }
+        v.play().then(() => card.classList.add("playing")).catch(() => {});
+      });
+      card.addEventListener("mouseleave", () => { card.classList.remove("playing"); v && v.pause(); });
+    });
+  }
+</script>
 </body>
 </html>
