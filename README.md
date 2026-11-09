@@ -6,6 +6,7 @@ Static site served by GitHub Pages at https://chimexokeke.github.io
 - `chi-before-dawn/`: CHI: Before Dawn playable ad case study; `play/` is the ad itself (one HTML file)
 - `be-still/`: Be Still case study (fire fox encounter, Unity 6 URP)
 - `gravedancer/`: Gravedancer case study (R15 rig, animation and Luau runtime for Roblox)
+- `nkiruka/`: Nkiruka "Stillwing" case study (fighter on a cane, Maya animation, Unreal Engine 5)
 - `style.css`: shared styles; colours are the variables at the top
 - `img/`: images
 

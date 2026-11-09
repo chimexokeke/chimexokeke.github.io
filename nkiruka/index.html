@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nkiruka "Stillwing" · Samuel Chimezie Okeke</title>
+<meta name="description" content="Nkiruka: gameplay animation for a fighter who walks with a cane. Reference-led keyframe animation in Maya, implemented in Unreal Engine with Blueprints.">
+<meta property="og:title" content="Nkiruka · gameplay animation for a fighter on a cane">
+<meta property="og:description" content="How does a character who depends on a cane still fight? Reference-led keyframe animation in Maya, implemented in Unreal Engine. By Samuel Chimezie Okeke.">
+<meta property="og:image" content="../img/nkiruka/reel.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  :root { --sage: #8fd0bf; --red: #ff7a6b; }
+  .hero { padding: 56px 0 64px; background: radial-gradient(1100px 520px at 75% -10%, rgba(143,208,191,.16), transparent 60%), radial-gradient(800px 420px at 0% 0%, rgba(242,184,75,.10), transparent 60%); }
+  .hero .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px 44px; align-items: center; }
+  @media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } }
+  .hero .stats { grid-template-columns: repeat(2, 1fr); }
+  .quote { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; color: var(--sage); margin: 0 0 14px; }
+  .eyebrow.s { color: var(--sage); }
+  video { width: 100%; display: block; background: #111; }
+  .reel { aspect-ratio: 16/9; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+  .clip { border-radius: 14px; border: 1px solid var(--line); }
+  .wrong .clip { border-color: rgba(255,122,107,.6); }
+  .right .clip { border-color: rgba(143,208,191,.6); }
+  .tag { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; }
+  .tag.bad { background: rgba(255,122,107,.15); color: var(--red); }
+  .tag.good { background: rgba(143,208,191,.15); color: var(--sage); }
+  .refs { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start; }
+  .rule { border-left: 3px solid var(--sage); }
+  .rule h3 { color: var(--sage); }
+  .moves { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); }
+  .move { padding: 14px; }
+  .move video { border-radius: 10px; aspect-ratio: 1260/640; background: #5a5a5a; }
+  .move h3 { margin: 12px 0 .2em; }
+  .move p { font-size: 15px; color: var(--muted); margin: 0; }
+  .views { display: grid; grid-template-columns: repeat(3, 1fr); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-align: center; margin-top: 6px; }
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0 0; font-weight: 800; font-size: 15px; }
+  .flow span { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
+  .flow i { color: var(--sage); font-style: normal; }
+  .combo { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+  .combo li { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px; font-weight: 800; font-size: 15px; }
+  .combo li + li::before { content: "→ "; color: var(--sage); }
+  .credit { border-left: 3px solid var(--gold); }
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="../">Samuel Chimezie Okeke</a>
+  <ul>
+    <li class="hide-sm"><a href="#character">Character</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#moveset">Moveset</a></li>
+    <li class="hide-sm"><a href="#unreal">In engine</a></li>
+    <li><a href="../#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Gameplay animation · Maya → Unreal Engine 5 · in development</div>
+      <h1>Nkiruka "Stillwing"</h1>
+      <p class="quote">The pain shows in her body, never her face.</p>
+      <p class="lead">A former dancer whose left leg was crushed, who now walks with a cane. Can someone in her condition still fight?</p>
+      <p class="muted">I wrote the character first, then filmed myself as reference for every move and keyframed her in Maya. Each move had to answer the same questions: where is her weight, and how does she keep it off the bad knee? The clips are set up in Unreal Engine with Blueprints.</p>
+      <div class="stats">
+        <div class="stat"><b>Right</b><span>hand on the cane, opposite the injured left knee</span></div>
+        <div class="stat"><b>15+</b><span>player animations, plus a full enemy set</span></div>
+        <div class="stat"><b>3</b><span>views checked on every clip: front, side, back</span></div>
+        <div class="stat"><b>100%</b><span>keyframed from my own reference footage</span></div>
+      </div>
+    </div>
+    <figure>
+      <video class="reel clip" src="../img/nkiruka/reel.mp4" poster="../img/nkiruka/reel.webp" autoplay muted loop playsinline controls preload="metadata" aria-label="Nkiruka animation reel: idle, attack idle, combo, run and jump in Maya and in Unreal Engine"></video>
+      <figcaption>Showreel: Maya playblasts next to the same clips playing in Unreal Engine. Unmute for sound.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<section id="character">
+  <div class="wrap">
+    <div class="eyebrow s">Character</div>
+    <h2>A dancer relearning every move</h2>
+    <p class="lead">Before animating anything I wrote a character profile, so that every animation would show her backstory and attitude.</p>
+    <div class="grid g2" style="margin-top:24px">
+      <div>
+        <h3>Who she is</h3>
+        <ul class="ticks">
+          <li>Nkiru grew up in a travelling performance troupe and was famous for dancing with her fiancé.</li>
+          <li>Raiders attacked a show. Her fiancé died shielding her, and her <b>left leg was crushed</b>. The townsfolk started calling her <i>Stillwing</i>: a bird that no longer flies.</li>
+          <li>She seems cold and keeps a plain, unreadable face. She hides her pain behind calm, controlled actions.</li>
+          <li>She fights with her late fiancé's <b>dagger</b>. Her <b>cane</b>, made by the troupe's carpenter and held in her right hand, takes weight off her left leg. In a fight it blocks and strikes low.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>How she fights</h3>
+        <p>In short, brutal bursts. A hard cane strike breaks the enemy's balance, then fast dagger work finishes them before they recover.</p>
+        <p class="muted">Her weakness drives the animation: the cane is also the only thing keeping her upright. Losing balance costs her far more than it costs other fighters, so every attack has to end with the cane planted again.</p>
+        <h3 style="margin-top:20px">Basic combo: Smash, Slash, Stab</h3>
+        <ul class="combo"><li>Cane smash</li><li>Slash</li><li>Slash</li><li>Dagger stab</li></ul>
+        <h3 style="margin-top:20px">Animated so far</h3>
+        <ul class="chips" style="margin-top:8px"><li>2 idle variants</li><li>Attack idle</li><li>Strafe forward, back, left, right</li><li>Run</li><li>Jump</li><li>4-part attack combo</li><li>Special attack</li><li>Hit reaction</li><li>Enemy locomotion, attacks and hit reactions</li></ul>
+        <p class="muted" style="margin-top:12px">Planned next: Redirect (catch an attack on the cane), Pull and Strike, Spin Strike, and the ultimate, <i>One Last Dance</i>, where her old grace breaks through for a few seconds and leaves her off balance afterwards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="eyebrow s">Research and reference</div>
+    <h2>I got the cane wrong first</h2>
+    <p class="lead">I shot reference of myself with a crutch for each move. In the first pass I held it on the same side as the injured leg, with the bad leg on the right. My mentors pointed out that this isn't how people use a cane or crutch.</p>
+
+    <div class="card rule" style="margin-top:24px">
+      <h3>The rule: the cane goes opposite the injured leg</h3>
+      <p>The cane is held in the hand on the <b>strong</b> side and moves forward <b>together with the injured leg</b>. Each time the bad leg is on the ground, the cane is on the ground too, on the other side of the body. That spreads her weight across a wider base and moves it away from the bad knee. With the cane on the same side, all the weight stays over the injured leg, so the cane barely helps.</p>
+      <p class="muted">The fix was to move the injury to her <b>left</b> knee, keep the cane in her right hand and the dagger in her left, and shoot new reference.</p>
+    </div>
+
+    <h3 style="margin-top:36px"><span class="tag bad">Before</span><br>Cane on the same side as the bad leg</h3>
+    <div class="refs wrong">
+      <figure><video class="clip" src="../img/nkiruka/wrong_walk.mp4" poster="../img/nkiruka/wrong_walk.webp" muted loop playsinline autoplay preload="metadata" aria-label="Early walk reference filmed from front and side, with the crutch on the same side as the injured leg"></video><figcaption>Walk reference, front and side. The crutch is on the same side as the injured leg.</figcaption></figure>
+      <figure><video class="clip" src="../img/nkiruka/wrong_idle.mp4" poster="../img/nkiruka/wrong_idle.webp" muted loop playsinline autoplay preload="metadata" aria-label="Early idle reference with the crutch on the wrong side"></video><figcaption>Idle reference: weight hangs over the crutch side.</figcaption></figure>
+      <figure><video class="clip" src="../img/nkiruka/wrong_leg.mp4" poster="../img/nkiruka/wrong_leg.webp" muted loop playsinline autoplay preload="metadata" aria-label="First idle animation in Maya with the injured leg on the wrong side"></video><figcaption>The first idle in Maya, built from that reference: the injured leg was on the right, the same side as the cane.</figcaption></figure>
+    </div>
+
+    <h3 style="margin-top:36px"><span class="tag good">After</span><br>Cane in the right hand, injured left knee</h3>
+    <div class="refs right">
+      <figure><video class="clip" src="../img/nkiruka/ref_idle.mp4" poster="../img/nkiruka/ref_idle.webp" muted loop playsinline autoplay preload="metadata" aria-label="Corrected idle reference: weight on the good right leg, cane in the right hand"></video><figcaption>Idle: most of the weight on the good right leg, watching her surroundings.</figcaption></figure>
+      <figure><video class="clip" src="../img/nkiruka/ref_walk.mp4" poster="../img/nkiruka/ref_walk.webp" muted loop playsinline autoplay preload="metadata" aria-label="Corrected walk reference from the side and from behind"></video><figcaption>Walk: the cane and the left leg land together.</figcaption></figure>
+      <figure><video class="clip" src="../img/nkiruka/ref_run.mp4" poster="../img/nkiruka/ref_run.webp" muted loop playsinline autoplay preload="metadata" aria-label="Corrected run reference from the side and from behind"></video><figcaption>Run: the cane vaults her past the bad leg's short contact.</figcaption></figure>
+    </div>
+
+    <div class="grid g2" style="margin-top:32px">
+      <div>
+        <h3>What I watched for in every clip</h3>
+        <ul class="ticks">
+          <li><b>Weight:</b> the hips sit over the right leg, and the left foot touches lightly and leaves early.</li>
+          <li><b>Timing:</b> the left leg gets a short, guarded contact, and the right leg a long, loaded one. That uneven rhythm is the limp.</li>
+          <li><b>The cane takes the load:</b> the right shoulder dips and the elbow locks when it plants.</li>
+          <li><b>A calm face:</b> per the profile, the effort shows in the body and never in her expression, even mid-combo.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Process</h3>
+        <div class="flow"><span>Character profile</span><i>→</i><span>Film reference</span><i>→</i><span>Block in Maya</span><i>→</i><span>Mentor review</span><i>→</i><span>Polish</span><i>→</i><span>Export FBX</span><i>→</i><span>Unreal + Blueprints</span></div>
+        <p class="muted" style="margin-top:16px">Every clip was playblasted from front, side and back cameras, so a lean or weight shift that reads well from one angle couldn't hide a problem in another.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="moveset">
+  <div class="wrap">
+    <div class="eyebrow s">Moveset</div>
+    <h2>Keyframed in Maya</h2>
+    <p class="lead">A selection of the player clips, each shown from three cameras at once. The cane stays in her right hand throughout, and every action ends with her weight back over it. The strafes, special attack, hit reaction and enemy set appear in the engine footage below.</p>
+    <div class="moves" style="margin-top:24px">
+      <figure class="card move">
+        <video src="../img/nkiruka/attack_idle.mp4" poster="../img/nkiruka/attack_idle.webp" muted loop playsinline autoplay preload="metadata" aria-label="Attack idle from front, side and back"></video>
+        <div class="views"><span>Front</span><span>Side</span><span>Back</span></div>
+        <h3>Attack idle</h3><p>Dagger up, cane planted wide on the right. A ready stance that never loads the left knee.</p>
+      </figure>
+      <figure class="card move">
+        <video src="../img/nkiruka/run.mp4" poster="../img/nkiruka/run.webp" muted loop playsinline autoplay preload="metadata" aria-label="Run cycle from front, side and back"></video>
+        <div class="views"><span>Front</span><span>Side</span><span>Back</span></div>
+        <h3>Run</h3><p>Running with effort: the cane strikes with the left foot and takes the load, so the bad leg only brushes the ground.</p>
+      </figure>
+      <figure class="card move">
+        <video src="../img/nkiruka/jump.mp4" poster="../img/nkiruka/jump.webp" muted loop playsinline autoplay preload="metadata" aria-label="Jump from front, side and back"></video>
+        <div class="views"><span>Front</span><span>Side</span><span>Back</span></div>
+        <h3>Jump</h3><p>A short, careful jump. She pushes off with the cane and lands softly on the stronger right leg.</p>
+      </figure>
+      <figure class="card move">
+        <video src="../img/nkiruka/light_attack.mp4" poster="../img/nkiruka/light_attack.webp" muted loop playsinline autoplay preload="metadata" aria-label="Light attack from front, side and back"></video>
+        <div class="views"><span>Front</span><span>Side</span><span>Back</span></div>
+        <h3>Light attack</h3><p>A quick dagger cut. The body turns over the planted cane rather than stepping onto the left leg.</p>
+      </figure>
+      <figure class="card move">
+        <video src="../img/nkiruka/combo1.mp4" poster="../img/nkiruka/combo1.webp" muted loop playsinline autoplay preload="metadata" aria-label="Combo part one from front, side and back"></video>
+        <div class="views"><span>Front</span><span>Side</span><span>Back</span></div>
+        <h3>Combo 1</h3><p>The opener. She drops low to drive the cane in and break the enemy's balance.</p>
+      </figure>
+      <figure class="card move">
+        <video src="../img/nkiruka/combo2.mp4" poster="../img/nkiruka/combo2.webp" muted loop playsinline autoplay preload="metadata" aria-label="Combo part two from front, side and back"></video>
+        <div class="views"><span>Front</span><span>Side</span><span>Back</span></div>
+        <h3>Combo 2</h3><p>The follow-up dagger slash, chained before the enemy can recover.</p>
+      </figure>
+      <figure class="card move">
+        <video src="../img/nkiruka/combo3.mp4" poster="../img/nkiruka/combo3.webp" muted loop playsinline autoplay preload="metadata" aria-label="Combo part three from front, side and back"></video>
+        <div class="views"><span>Front</span><span>Side</span><span>Back</span></div>
+        <h3>Combo 3</h3><p>The finishing stab, ending with her weight back over the cane.</p>
+      </figure>
+      <figure class="card move">
+        <video src="../img/nkiruka/knife_spin.mp4" poster="../img/nkiruka/knife_spin.webp" muted loop playsinline autoplay preload="metadata" aria-label="Idle variation: she spins the dagger in her left hand while leaning on the cane" style="aspect-ratio:16/9"></video>
+        <h3>Idle variation: knife spin</h3><p>A fidget that shows a dancer's hands are still quick. It's the only showy move, and her face stays blank.</p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="unreal">
+  <div class="wrap">
+    <div class="eyebrow s">In engine</div>
+    <h2>Playing in Unreal Engine</h2>
+    <p class="lead">I exported the clips from Maya and set them up in Unreal Engine 5. Blueprint logic drives her idles, strafes, run and jump, chains the four attacks into a combo, and triggers the special attack and hit reactions. The enemy has its own locomotion, attacks and hit reactions.</p>
+    <p class="muted">Short excerpts from the in-engine captures.</p>
+    <div class="grid g2" style="margin-top:24px">
+      <figure><video class="clip" src="../img/nkiruka/ue_preview03.mp4" poster="../img/nkiruka/ue_preview03.webp" controls playsinline preload="none" aria-label="Unreal Engine gameplay preview: walking, attacking and jumping"></video><figcaption>Gameplay preview: locomotion, attacks and jump.</figcaption></figure>
+      <figure><video class="clip" src="../img/nkiruka/ue_preview04.mp4" poster="../img/nkiruka/ue_preview04.webp" controls playsinline preload="none" aria-label="Unreal Engine gameplay preview: combat against an enemy"></video><figcaption>Combat preview: the combo against an enemy.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="credits">
+  <div class="wrap">
+    <div class="card credit">
+      <h3>Credits</h3>
+      <p>The character model and rig are <b>Sparrow from Paragon</b> by Epic Games, <a href="https://www.fab.com/listings/7d76ddf0-d9ce-4d00-939e-d72793534d01">available free on Fab</a>. They are not my work.</p>
+      <p class="muted">My work: the character concept and profile, the reference footage, all the keyframe animation in Maya, and the Unreal Engine setup. Thanks to my mentors for catching the cane mistake.</p>
+    </div>
+    <div class="eyebrow" style="margin-top:40px">Tools used</div>
+    <ul class="chips">
+      <li>Autodesk Maya</li><li>Unreal Engine 5</li><li>Blueprints</li><li>Self-shot video reference</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap row" style="justify-content:space-between">
+    <span>© 2026 Samuel Chimezie Okeke · Nkiruka</span>
+    <a href="../">← All work</a>
+  </div>
+</footer>
+<script>
+  // Only play looping clips while they are on screen.
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) { v.play().catch(() => {}); } else { v.pause(); }
+  }), { rootMargin: "200px" });
+  document.querySelectorAll("video[loop]").forEach(v => io.observe(v));
+</script>
+</body>
+</html>
