@@ -25,6 +25,14 @@
   .gallery.animals img { background: #5f5f63; }
   .quote { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; color: var(--teal); margin: 0 0 14px; }
   .strip { grid-auto-columns: minmax(280px, 1fr); }
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+  @media (max-width: 760px) { .trio { grid-template-columns: 1fr; } }
+  .trio video { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #12151c; display: block; border-radius: 10px; }
+  .trio .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .beat { margin-top: 40px; }
+  .beat h3 { margin-bottom: 4px; }
+  .beat > p { margin: 0; max-width: 820px; }
+  .clips video { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #4b4d52; display: block; border-radius: 10px; }
 </style>
 </head>
 <body>
@@ -34,6 +42,7 @@
   <ul>
     <li><a href="#encounter">Encounter</a></li>
     <li class="hide-sm"><a href="#fox">The fox</a></li>
+    <li><a href="#animation">Animation</a></li>
     <li class="hide-sm"><a href="#world">World</a></li>
     <li class="hide-sm"><a href="#tech">Shaders</a></li>
     <li><a href="../#contact">Contact</a></li>
@@ -43,16 +52,17 @@
 <header class="hero">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Interactive piece · in development</div>
+      <div class="eyebrow">Interactive piece · 2026 · PC and browser</div>
       <h1>Be Still</h1>
       <p class="quote">Metsä katsoo. The forest is watching.</p>
       <p class="lead">A winter night in a Finnish forest. Your torch dies, and eyes open between the trees. If you stop walking, a fire fox comes out of the dark to meet you. Move, and it's gone.</p>
+      <p><a class="btn solid" href="https://chimex.itch.io/be-still">Play on itch.io →</a></p>
       <p class="muted">The whole game uses one control. Hold to walk, move the mouse to look, and let go to stand still. I modelled, textured, rigged and animated the fox, and I made the shaders that give it fur and fire and the behaviour that decides how close it dares to come.</p>
     </div>
     <div>
       <div class="stats">
         <div class="stat"><b>1</b><span>control: walk or stand still</span></div>
-        <div class="stat"><b>15</b><span>fox animation clips</span></div>
+        <div class="stat"><b>19</b><span>hand-keyed fox clips in the game</span></div>
         <div class="stat"><b>56</b><span>deform bones, face included</span></div>
         <div class="stat"><b>PC + web</b><span>Unity 6 URP, one project</span></div>
       </div>
@@ -73,20 +83,20 @@
     <p class="lead">The fox approaches in stages, and walking at any point before it trusts you makes it bolt. It comes back warier each time. Once it trusts you, your body stays still to the end and only your gaze follows it.</p>
     <div class="strip" style="margin-top:24px">
       <figure><img class="shot" loading="lazy" src="../img/bestill/01_torch.webp" alt="First-person view: a gloved hand holds a torch on a snowy forest path" width="1280" height="720"><figcaption><span class="num">Walk.</span> The torch lights a narrow path through an endless forest.</figcaption></figure>
-      <figure><img class="shot" loading="lazy" src="../img/bestill/02_eyes.webp" alt="Dark forest with pairs of glowing eyes and a small fox far down the path" width="1280" height="720"><figcaption><span class="num">The gust.</span> The torch dies. Sparks drift, eyes blink in the trees, and far down the path, something waits.</figcaption></figure>
-      <figure><img class="shot" loading="lazy" src="../img/bestill/03_curious.webp" alt="The fox stands on the moonlit path, facing the player" width="1280" height="720"><figcaption><span class="num">Be still.</span> It appears, freezes, trots closer and watches you with its head tilted.</figcaption></figure>
-      <figure><img class="shot" loading="lazy" src="../img/bestill/04_trust.webp" alt="Close view of the fox looking up at the player, tail flame raised" width="1280" height="720"><figcaption><span class="num">Trust.</span> It sniffs and wags, then brushes past your leg.</figcaption></figure>
+      <figure><img class="shot" loading="lazy" src="../img/bestill/02_eyes.webp" alt="Dark forest with pairs of glowing eyes and a small fox far down the path" width="1280" height="720"><figcaption><span class="num">The gust.</span> The torch dies. Snow keeps falling, eyes blink in the trees, and far down the path, something waits.</figcaption></figure>
+      <figure><img class="shot" loading="lazy" src="../img/bestill/03_curious.webp" alt="The fox stands on the moonlit path, facing the player" width="1280" height="720"><figcaption><span class="num">Be still.</span> It trots out of the dark, freezes and watches you, curious, before it decides to turn toward you.</figcaption></figure>
+      <figure><img class="shot" loading="lazy" src="../img/bestill/04_trust.webp" alt="Close view of the fox looking up at the player, tail flame raised" width="1280" height="720"><figcaption><span class="num">Trust.</span> It sniffs and wags, then rubs against your leg and sits beside you.</figcaption></figure>
       <figure><img class="shot" loading="lazy" src="../img/bestill/05_awakening.webp" alt="The fox glowing brighter, sparks rising into the trees" width="1280" height="720"><figcaption><span class="num">Awakening.</span> Colour runs through its fur from head to tail and out into the forest.</figcaption></figure>
-      <figure><img class="shot" loading="lazy" src="../img/bestill/06_frolic.webp" alt="The fox leaping in a clearing under aurora, with a bear, elk, deer and swan around it" width="1600" height="720"><figcaption><span class="num">Play.</span> Under the aurora, spirit animals step out of the dark and the fox runs off to play with them.</figcaption></figure>
+      <figure><img class="shot" loading="lazy" src="../img/bestill/06_frolic.webp" alt="The fox leaping in a clearing under aurora, with a bear, elk, deer and swan around it" width="1600" height="720"><figcaption><span class="num">Play.</span> The forest's other animals come out, and the fox pounces and rolls in the snow. Where its tail sweeps the snow, sparks rise and become the aurora.</figcaption></figure>
     </div>
     <div class="grid g2" style="margin-top:28px">
       <div>
         <h3>Folklore, read loosely</h3>
-        <p>In Finnish, the northern lights are <i>revontulet</i>, "fox fires": sparks thrown up by the tail of a fox running across the fells. Forest spirits (<i>metsänhaltija</i>) are often said to take animal form. Be Still is my own interpretation of these stories, not a retelling.</p>
+        <p>In Finnish belief, a forest's <i>haltija</i> could take an animal's form, and the northern lights are <i>revontulet</i>, "fox fires", sparks thrown up by a fox's tail. In this telling, the forest chose the fire fox. Be Still is my own interpretation of these stories, not a retelling.</p>
       </div>
       <div>
         <h3>Behaviour as a state machine</h3>
-        <p>Hidden → Appear → Freeze → Closer → Curious → Approach → Sniff → Trust → Brush → Settle → Play, with Bolt reachable from every stage before Trust. Each state picks its clip and its movement speed, and the camera's gaze drifts toward the fox's face more strongly as trust grows.</p>
+        <p>Hidden → Cross → Freeze → Curious → Turn to face → Approach (stand, walk, trot, freeze, sniff…) → Trust → Brush → Sit → Play, with a startle (freeze, then run into the dark) from every stage before Trust. Each state picks its clip and its movement speed, and the camera's gaze drifts toward the fox's face more strongly as trust grows.</p>
       </div>
     </div>
   </div>
@@ -105,12 +115,6 @@
       <figure><img class="shot" loading="lazy" src="../img/bestill/rig_body.webp" alt="Fox mesh in Blender with rig controls: paw squares, spine, tail and look controls" width="1510" height="1055"><figcaption>Body controls: digitigrade IK legs with paw squares and heel roll, FK spine and neck, and a layered tail.</figcaption></figure>
       <figure><img class="shot" loading="lazy" src="../img/bestill/rig_face.webp" alt="Grid of fox face poses: blinks, jaw open, tongue out, snarl" width="1200" height="1200"><figcaption>The face rig: jaw, three-bone tongue, lids, nose, eyes and fleshy socket controls for blinks.</figcaption></figure>
     </div>
-    <h3 style="margin-top:36px">Animation clips</h3>
-    <p>Two of my hand-keyed clips, played straight from Blender on the game mesh.</p>
-    <div class="grid g2" style="margin-top:12px">
-      <figure><video class="shot" src="../img/bestill/anim_curious.mp4" poster="../img/bestill/anim_curious_poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Fox_Curious animation: the fox watches the visitor, tilting its head"></video><figcaption><b>Curious</b>: 140-frame loop, 30 fps. The fox stops on the path and studies the visitor before it dares come closer.</figcaption></figure>
-      <figure><video class="shot" src="../img/bestill/anim_settle.mp4" poster="../img/bestill/anim_settle_poster.webp" width="1280" height="720" autoplay muted loop playsinline preload="metadata" aria-label="Fox_Settle animation: the fox sits down and wraps its tail around itself"></video><figcaption><b>Settle</b>: 75 frames, 30 fps. After the rub, the fox sits beside the visitor and curls its tail around itself.</figcaption></figure>
-    </div>
     <div class="grid g2" style="margin-top:28px">
       <div>
         <h3>Rig</h3>
@@ -124,12 +128,90 @@
       <div>
         <h3>Animation</h3>
         <ul class="ticks">
-          <li>15 clips, including idle, walk, trot, freeze and hold, curious, sniff, tail wag, leg brush, settle and sitting idle, bolt, gallop, play and pounce.</li>
-          <li>I'm animating each clip as hand-keyed, keyframed animation in Blender. The idle, walk, trot, curious, sniff, freeze, gallop and settle clips are done; play, leg brush, pounce and bolt are next.</li>
-          <li>Locomotion is in place. The game moves the fox at each clip's measured stride speed, so the paws stay planted. I checked this with an in-engine probe that reports paw slide for each state.</li>
+          <li>19 hand-keyed clips: stand idle, walk, trot, run, freeze and hold, curious, a sniff split into start, loop and end, turn to face, tail wag, leg brush, settle and sitting idle, pounce and play. <a href="#animation">See them below.</a></li>
+          <li>The game moves the fox at each clip's measured stride speed, so the paws stay planted. Pounce and play run on the spot in Blender; the game carries the fox over the snow at a speed measured from its planted paws, frame by frame.</li>
+          <li>The turn to face the visitor is my keyed turn: the game reads it off the root bone each frame and only scales it to land three-quarter on.</li>
           <li>Every clip keys the full control set, so no pose leaks from one clip into the next during export.</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="animation">
+  <div class="wrap">
+    <div class="eyebrow">Animation</div>
+    <h2>From reference to Blender to the game</h2>
+    <p class="lead">After studying how foxes move, especially foxes in snow, I gathered reference footage, animated the fox's behaviour by hand in Blender, and implemented it in Unity, where a behaviour script decides which clip plays and how the fox moves through the forest.</p>
+    <p class="muted">Each row shows a reference I studied, my clip in Blender on the game mesh, and the same moment in the game, filmed from a low angle. The reference clips are other people's footage (mostly BBC wildlife film), shown here only as study material.</p>
+
+    <div class="beat">
+      <h3>Walking in snow</h3>
+      <p>A fox in deep snow lifts its paws high and places them almost in a line, its head low and steady while the body rolls over the legs. The walk and trot keep that economy, and the long mythical tail floats behind on its own delay.</p>
+      <div class="trio">
+        <figure><span class="tag">Reference</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/ref_foxwalk_poster.webp" src="../img/bestill/ref_foxwalk.mp4" aria-label="Reference: a red fox walking across snow"></video></figure>
+        <figure><span class="tag">Blender</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_walk_poster.webp" src="../img/bestill/blend_walk.mp4" aria-label="Fox_Walk in Blender"></video><figcaption>Fox_Walk, 28-frame loop</figcaption></figure>
+        <figure><span class="tag">In game</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/game_walk_trot_poster.webp" src="../img/bestill/game_walk_trot.mp4" aria-label="In game: the fox walks, then trots, closer to the visitor"></video><figcaption>Walk into trot as it comes closer</figcaption></figure>
+      </div>
+    </div>
+    <div class="beat">
+      <h3>Freeze, then curious</h3>
+      <p>Wild foxes stop dead the moment they notice you, then study you with small head tilts and ear flicks. Off the trot the fox freezes, holds the freeze, then turns curious, with a procedural head and eye aim keeping its gaze on the visitor wherever they stand.</p>
+      <div class="trio">
+        <figure><span class="tag">Reference</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/ref_fox_look_at_poster.webp" src="../img/bestill/ref_fox_look_at.mp4" aria-label="Reference: a fox stops and looks at the camera"></video></figure>
+        <figure><span class="tag">Blender</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_curious_poster.webp" src="../img/bestill/blend_curious.mp4" aria-label="Fox_Curious in Blender"></video><figcaption>Fox_Curious, 140-frame loop</figcaption></figure>
+        <figure><span class="tag">In game</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/game_freeze_curious_poster.webp" src="../img/bestill/game_freeze_curious.mp4" aria-label="In game: the fox freezes and watches the visitor, curious"></video><figcaption>Freeze, hold, curious, all while watching you</figcaption></figure>
+      </div>
+    </div>
+    <div class="beat">
+      <h3>Deciding: the turn to face you</h3>
+      <p>A short, careful turn in three or four steps, the weight shifting before each paw moves. I keyed the turn on a fake root in Blender, the export bakes it onto the real root, and the game takes it off the root bone each frame, so the turn you see is the one I animated.</p>
+      <div class="trio">
+        <figure><span class="tag">Reference</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/ref_fox_turn_poster.webp" src="../img/bestill/ref_fox_turn.mp4" aria-label="Reference: a fox turns on the spot"></video></figure>
+        <figure><span class="tag">Blender</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_turntoface_poster.webp" src="../img/bestill/blend_turntoface.mp4" aria-label="Fox_TurnToFace in Blender"></video><figcaption>Fox_TurnToFace, 50 frames</figcaption></figure>
+        <figure><span class="tag">In game</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/game_turn_poster.webp" src="../img/bestill/game_turn.mp4" aria-label="In game: the fox turns to face the visitor"></video><figcaption>It turns three-quarter on to you, then stands</figcaption></figure>
+      </div>
+    </div>
+    <div class="beat">
+      <h3>Trust: sniff, rub, sit</h3>
+      <p>Close up, the fox sniffs the air and your boots, rubs its flank against your leg, then turns back to you and sits. The sniff is split into start, loop and end, so the game can hold it for as long as a beat needs.</p>
+      <div class="trio">
+        <figure><span class="tag">Reference</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/ref_getup_poster.webp" src="../img/bestill/ref_getup.mp4" aria-label="Reference: a fox shifting its weight in the snow"></video></figure>
+        <figure><span class="tag">Blender</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_legbrush_poster.webp" src="../img/bestill/blend_legbrush.mp4" aria-label="Fox_LegBrush in Blender"></video><figcaption>Fox_LegBrush, 90 frames</figcaption></figure>
+        <figure><span class="tag">In game</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/game_brush_trust_poster.webp" src="../img/bestill/game_brush_trust.mp4" aria-label="In game: the fox rubs the visitor's leg, turns and sits beside them"></video><figcaption>The rub, the turn back and the sit</figcaption></figure>
+      </div>
+    </div>
+    <div class="beat">
+      <h3>The mousing pounce</h3>
+      <p>Foxes hunting under snow sprint, hop twice to listen, then dive head first and bury themselves up to the tail. The game measures the clip in Blender (how far the paws travel, and when the body goes under the snow) and throws up the snow on that frame. While the tail sweeps the snow, sparks rise from it and build the aurora.</p>
+      <div class="trio">
+        <figure><span class="tag">Reference</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/ref_play01_poster.webp" src="../img/bestill/ref_play01.mp4" aria-label="Reference: a fox leaps and dives head first into snow"></video></figure>
+        <figure><span class="tag">Blender</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_pounce_poster.webp" src="../img/bestill/blend_pounce.mp4" aria-label="Fox_Pounce in Blender"></video><figcaption>Fox_Pounce, 210 frames</figcaption></figure>
+        <figure><span class="tag">In game</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/game_pounce_poster.webp" src="../img/bestill/game_pounce.mp4" aria-label="In game: the fox sprints, dives into the snow, and its tail throws up coloured sparks"></video><figcaption>Sprint, hops, dive; the tail's sparks become the aurora</figcaption></figure>
+      </div>
+    </div>
+    <div class="beat">
+      <h3>Play: the belly flop</h3>
+      <p>The same sprint and double hop, but it lands flat on its belly and wiggles, sweeping the snow with its tail, then gets up. The bear, elk, deer and swan come out of the dark to watch and play.</p>
+      <div class="trio">
+        <figure><span class="tag">Reference</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/ref_play02_poster.webp" src="../img/bestill/ref_play02.mp4" aria-label="Reference: a fox lying down and rolling playfully"></video></figure>
+        <figure><span class="tag">Blender</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_play_poster.webp" src="../img/bestill/blend_play.mp4" aria-label="Fox_Play in Blender"></video><figcaption>Fox_Play, 190 frames</figcaption></figure>
+        <figure><span class="tag">In game</span><video data-auto muted loop playsinline preload="none" poster="../img/bestill/game_play_poster.webp" src="../img/bestill/game_play.mp4" aria-label="In game: the fox belly flops in the snow beside the bear"></video><figcaption>The belly flop, with the bear watching</figcaption></figure>
+      </div>
+    </div>
+
+    <h3 style="margin-top:44px">More clips</h3>
+    <p>The rest of the set. The trot reference is my own collage board.</p>
+    <div class="grid g3 clips" style="margin-top:12px">
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/ref_trot_poster.webp" src="../img/bestill/ref_trot.mp4" aria-label="Trot reference board"></video><figcaption>Trot reference board</figcaption></figure>
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_trot_poster.webp" src="../img/bestill/blend_trot.mp4" aria-label="Fox_Trot in Blender"></video><figcaption>Fox_Trot, 19-frame loop</figcaption></figure>
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_run_poster.webp" src="../img/bestill/blend_run.mp4" aria-label="Fox_Run in Blender"></video><figcaption>Fox_Run: the startle, a gallop into the dark</figcaption></figure>
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_freeze_poster.webp" src="../img/bestill/blend_freeze.mp4" aria-label="Fox_Freeze in Blender"></video><figcaption>Fox_Freeze, 24 frames</figcaption></figure>
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_sniff_poster.webp" src="../img/bestill/blend_sniff.mp4" aria-label="Fox_Sniff in Blender"></video><figcaption>Fox_Sniff, played as start, loop and end</figcaption></figure>
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_tailwag_poster.webp" src="../img/bestill/blend_tailwag.mp4" aria-label="Fox_TailWag in Blender"></video><figcaption>Fox_TailWag</figcaption></figure>
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/blend_settle_poster.webp" src="../img/bestill/blend_settle.mp4" aria-label="Fox_Settle in Blender"></video><figcaption>Fox_Settle: sitting down beside you</figcaption></figure>
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/game_sniff_poster.webp" src="../img/bestill/game_sniff.mp4" aria-label="In game: the fox sniffs the air"></video><figcaption>In game: sniffing the air</figcaption></figure>
+      <figure><video data-auto muted loop playsinline preload="none" poster="../img/bestill/game_walk_in_sniff_poster.webp" src="../img/bestill/game_walk_in_sniff.mp4" aria-label="In game: the fox walks in and sniffs the visitor"></video><figcaption>In game: walking in to sniff you</figcaption></figure>
     </div>
   </div>
 </section>
@@ -198,5 +280,16 @@
     <a href="../">← All work</a>
   </div>
 </footer>
+<script>
+  // Play each looping clip only while it is on screen (27 videos would otherwise all download and play at once).
+  const vids = document.querySelectorAll('video[data-auto]');
+  const io = new IntersectionObserver(entries => {
+    for (const e of entries) {
+      if (e.isIntersecting) e.target.play().catch(() => {});
+      else e.target.pause();
+    }
+  }, { rootMargin: '200px 0px' });
+  vids.forEach(v => io.observe(v));
+</script>
 </body>
 </html>
